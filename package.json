@@ -1,0 +1,14 @@
+{
+  "name": "slp-ahmadghanem",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website of Ahmad Ghanem, Speech-Language Pathologist",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

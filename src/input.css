@@ -1,0 +1,389 @@
+@import "tailwindcss";
+
+/* Dark mode is toggled with a class on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Design tokens (palette drawn from the logo) ---------- */
+:root {
+  --bg: #fff9f2;          /* warm cream */
+  --surface: #ffffff;
+  --surface-2: #fff1e3;   /* soft peach */
+  --ink: #3e2a20;         /* cocoa brown (logo hair) */
+  --muted: #7a6255;
+  --line: #f0e0d0;
+  --primary: #1f7f67;     /* deep mint - AA on white */
+  --primary-ink: #ffffff;
+  --primary-soft: #dcf3ec;
+  --mint: #46c2a0;        /* decorative mint */
+  --accent: #f5a066;      /* apricot */
+  --accent-strong: #b34f14;
+  --accent-soft: #fde6d5;
+  --sun: #f6c453;
+  --sun-soft: #fdf2d2;
+  --ok: #1f7f67;
+  --warn: #a86a00;
+  --alert: #c0392b;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #17120f;
+  --surface: #211915;
+  --surface-2: #2b211b;
+  --ink: #f6eee7;
+  --muted: #c9b5a7;
+  --line: #3a2e27;
+  --primary: #5fd3b3;
+  --primary-ink: #0f2a22;
+  --primary-soft: #1a3a31;
+  --mint: #5fd3b3;
+  --accent: #f7a56c;
+  --accent-strong: #f7a56c;
+  --accent-soft: #3d281b;
+  --sun: #f6c453;
+  --sun-soft: #3a311a;
+  --ok: #5fd3b3;
+  --warn: #f6c453;
+  --alert: #ff8a7a;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-primary-soft: var(--primary-soft);
+  --color-mint: var(--mint);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-sun: var(--sun);
+  --color-sun-soft: var(--sun-soft);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-alert: var(--alert);
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold transition duration-300 active:scale-95 disabled:pointer-events-none disabled:opacity-50;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  ::selection {
+    background: var(--accent);
+    color: #2b1a10;
+  }
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+  svg.icon {
+    width: 1.25em;
+    height: 1.25em;
+    flex: none;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-20 sm:py-28;
+    overflow-x: clip;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-primary-soft px-4 py-1.5 text-sm font-semibold text-primary;
+  }
+  .h-section {
+    @apply mt-4 text-3xl font-bold leading-tight sm:text-4xl;
+  }
+  .lead {
+    @apply mt-4 text-lg leading-relaxed text-muted;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-primary-ink shadow-lg shadow-primary/20 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/30;
+  }
+  .btn-accent {
+    @apply btn bg-accent text-[#2b1a10] shadow-lg shadow-accent/25 hover:-translate-y-0.5 hover:shadow-xl;
+  }
+  .btn-ghost {
+    @apply btn border-2 border-line bg-surface text-ink hover:border-primary hover:text-primary;
+  }
+  /* Floating button to the telepractice page; follows the visitor, above the safe area. */
+  .tele-fab {
+    @apply fixed z-40 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3.5 font-bold text-primary-ink shadow-xl shadow-primary/30 transition hover:-translate-y-0.5;
+    inset-inline-end: 1.25rem;
+    bottom: max(1.25rem, env(safe-area-inset-bottom));
+    min-height: 3.25rem;
+  }
+  .tele-fab .icon { @apply h-6 w-6; }
+  .card {
+    @apply rounded-3xl border border-line bg-surface p-6 shadow-sm transition duration-300;
+  }
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-surface text-ink transition hover:border-primary hover:text-primary;
+  }
+  .nav-link {
+    @apply relative rounded-full px-3 py-2 text-sm font-medium text-muted transition hover:text-ink;
+  }
+  .nav-link.active {
+    @apply bg-primary-soft text-primary;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line bg-surface px-3 py-1.5 text-sm font-medium;
+  }
+  .field {
+    @apply w-full rounded-2xl border-2 border-line bg-surface px-4 py-3 text-ink placeholder:text-muted/70 transition focus:border-primary focus:outline-none;
+  }
+  .answer-btn {
+    @apply flex w-full items-center justify-between gap-3 rounded-2xl border-2 border-line bg-surface px-5 py-4 text-start text-lg font-semibold transition hover:-translate-y-0.5 hover:border-primary hover:bg-primary-soft;
+  }
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.reveal-scale.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Hero animations ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-14px) rotate(var(--r, 0deg)); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes wave-bar {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}
+@keyframes ripple {
+  0% { transform: scale(0.85); opacity: 0.55; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+@keyframes blob {
+  0%, 100% { border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%; }
+  50% { border-radius: 58% 42% 38% 62% / 55% 61% 39% 45%; }
+}
+@keyframes dash {
+  to { stroke-dashoffset: -200; }
+}
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.anim-float { animation: float 6s ease-in-out infinite; animation-delay: var(--delay, 0s); }
+.anim-bob { animation: bob 7s ease-in-out infinite; }
+.anim-spin-slow { animation: spin-slow 40s linear infinite; }
+.anim-blob { animation: blob 14s ease-in-out infinite; }
+.anim-ripple { animation: ripple 3.2s ease-out infinite; animation-delay: var(--delay, 0s); }
+.anim-dash { stroke-dasharray: 6 10; animation: dash 6s linear infinite; }
+.anim-pop { animation: pop-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+.wave-bars span {
+  display: block;
+  width: 6px;
+  border-radius: 9999px;
+  background: currentColor;
+  transform-origin: center;
+  animation: wave-bar 1.2s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--primary), var(--mint) 45%, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dot-grid {
+  background-image: radial-gradient(var(--line) 1.4px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+
+/* Timeline progress line, scaled by JS */
+.timeline-progress {
+  transform-origin: top;
+  transform: scaleY(var(--p, 0));
+}
+
+/* Accordion helper */
+.acc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.acc-panel > div { overflow: hidden; }
+[aria-expanded="true"] + .acc-panel,
+.acc-panel.open {
+  grid-template-rows: 1fr;
+}
+[aria-expanded="true"] .acc-chevron { transform: rotate(180deg); }
+
+/* Navbar scrolled state */
+#site-header.scrolled {
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  box-shadow: 0 6px 24px -12px rgb(0 0 0 / 0.18);
+  border-color: var(--line);
+}
+
+/* Mirror directional icons in RTL */
+[dir="rtl"] .flip-rtl { transform: scaleX(-1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, .reveal-scale { opacity: 1; transform: none; }
+}
+
+/* Print only the screening result */
+@media print {
+  html.print-result body * { visibility: hidden; }
+  html.print-result #result-card,
+  html.print-result #result-card * { visibility: visible; }
+  html.print-result #result-card {
+    position: absolute;
+    inset: 0;
+    border: none;
+    box-shadow: none;
+  }
+  html.print-result .no-print { display: none !important; }
+}
+
+/* ================= Telepractice page (telepractice.html) =================
+   Drawn mock-ups of an online session with a demo child («آدم»): a laptop video call, a child's file, a report, and
+   three phones for home practice. Colours come from the tokens above, so dark mode follows. */
+@layer components {
+  .tp-laptop { @apply relative mx-auto w-full max-w-xl; }
+  .tp-screen { @apply relative overflow-hidden rounded-t-[1.4rem] border-[10px] border-[#2b211b] bg-[#1b1512] shadow-2xl; aspect-ratio: 16 / 10.4; }
+  .tp-share { @apply absolute inset-0 h-full w-full object-cover; }
+  .tp-base { @apply -mx-[6%] h-4 w-[112%] rounded-b-2xl bg-gradient-to-b from-[#3e2f27] to-[#241b16]; }
+  .tp-live { @apply absolute start-3 top-3 z-10 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1 text-xs font-bold text-white backdrop-blur; }
+  .tp-live i { @apply h-2.5 w-2.5 rounded-full bg-red-500; }
+  .tp-time { @apply font-mono opacity-80; }
+  .tp-tiles { @apply absolute end-3 top-3 z-10 grid gap-2; }
+  .tp-tile { @apply relative grid h-14 w-[4.5rem] place-items-center overflow-hidden rounded-xl border-2 border-white/80 bg-[#fff1e3] shadow-lg sm:h-24 sm:w-28; }
+  .tp-tile img, .tp-tile svg { @apply h-9 w-9 object-contain sm:h-16 sm:w-16; }
+  .tp-tile span { @apply absolute inset-x-0 bottom-0 bg-black/45 py-0.5 text-center text-[11px] font-bold text-white; }
+  .tp-kid { @apply bg-[#e6f4ee]; }
+  .tp-bar { @apply absolute inset-x-0 bottom-3 z-10 mx-auto flex w-max gap-2 rounded-full bg-black/55 p-1.5 backdrop-blur; }
+  .tp-bar span { @apply grid h-9 w-9 place-items-center rounded-full bg-white/15 text-white; }
+  .tp-bar span.on { @apply bg-primary; }
+  .tp-bar span.end { @apply bg-red-500; }
+  .tp-bar .icon { @apply h-4.5 w-4.5; }
+
+  .tp-step { @apply relative pt-10; }
+  .tp-step b { @apply absolute -top-4 start-6 grid h-10 w-10 place-items-center rounded-full bg-accent text-lg text-[#2b1a10] shadow-md; }
+  .tp-step > .icon { @apply h-8 w-8 text-primary; }
+  .tp-step h3 { @apply mt-3 text-xl font-bold; }
+  .tp-step p { @apply mt-2 leading-relaxed text-muted; }
+
+  .tp-list li { @apply flex items-start gap-3 text-lg leading-relaxed; }
+  .tp-list .icon { @apply mt-1 h-6 w-6 shrink-0 text-primary; }
+
+  .tp-mock { @apply mx-auto w-full max-w-lg p-5 sm:p-7; }
+  .tp-mock-head { @apply flex items-center gap-2 border-b border-line pb-3; }
+  .tp-mock-head b { @apply flex-1 text-lg; }
+  .tp-mock-head small { @apply rounded-full bg-surface-2 px-3 py-1 text-sm font-semibold text-muted; }
+  .tp-dot { @apply h-3 w-3 rounded-full bg-primary; }
+  .tp-fields { @apply mt-4 grid grid-cols-2 gap-3; }
+  .tp-fields div { @apply rounded-2xl bg-surface-2 px-4 py-3; }
+  .tp-fields dt { @apply text-xs text-muted; }
+  .tp-fields dd { @apply mt-0.5 font-bold; }
+  .tp-mini-title { @apply mt-5 mb-3 text-sm font-semibold text-muted; }
+  .tp-letters { @apply grid grid-cols-4 gap-2; }
+  .tp-letters span { @apply grid justify-center gap-x-1 gap-y-1.5 rounded-2xl border border-line bg-surface py-2; grid-template-columns: repeat(3, 10px); }
+  .tp-letters span b { @apply text-center text-2xl leading-snug; grid-column: 1 / -1; }
+  .tp-letters span i { @apply h-2.5 w-2.5 rounded-full bg-primary; grid-row: 2; }
+  .tp-letters span i.x { @apply bg-accent; }
+  .tp-letters span[data-s="bad"] { @apply border-accent/60 bg-accent/10; }
+  .tp-letters span[data-s="mix"] { @apply border-accent/40; }
+
+  .tp-bars { @apply mt-4 grid gap-3; }
+  .tp-bars div { @apply grid items-center gap-3; grid-template-columns: 5.5rem 1fr 3rem; }
+  .tp-bars span { @apply text-sm font-semibold; }
+  .tp-bars i { @apply block h-3 overflow-hidden rounded-full bg-surface-2; }
+  .tp-bars u { @apply block h-full rounded-full bg-primary; width: var(--p); }
+  .tp-bars b { @apply text-end text-sm; }
+  .tp-goals { @apply grid gap-2; }
+  .tp-goals p { @apply flex items-center justify-between gap-3 rounded-2xl border border-accent/40 bg-accent/10 px-4 py-2.5 text-sm; }
+  .tp-goals p[data-state="done"] { @apply border-primary/40 bg-primary-soft; }
+  .tp-goals b { @apply shrink-0 rounded-full bg-surface px-2.5 py-0.5 text-xs; }
+  .tp-scale { @apply mt-4 grid grid-cols-4 gap-2 text-center text-sm font-bold; }
+  .tp-scale span { @apply rounded-xl border border-line py-2 text-muted; }
+  .tp-scale span::after { content: "%"; }
+  .tp-scale span.on { @apply border-primary bg-primary text-primary-ink; }
+
+  .tp-device { @apply overflow-hidden rounded-3xl border-[8px] border-[#2b211b] bg-[#2b211b] shadow-xl; }
+  .tp-device img { @apply aspect-[4/3] w-full rounded-2xl object-cover; }
+  .tp-device figcaption { @apply grid gap-0.5 px-3 py-3 text-white; }
+  .tp-device figcaption b { @apply text-lg; }
+  .tp-device figcaption span { @apply text-sm text-[#c9b5a7]; }
+
+  .tp-phone { @apply mx-auto grid w-full max-w-[15rem] justify-items-center gap-3; }
+  .tp-phone figcaption { @apply text-center font-semibold; }
+  .tp-phone-screen { @apply relative grid aspect-[9/17] w-full content-center justify-items-center gap-3 overflow-hidden rounded-[2.2rem] border-[9px] border-[#2b211b] bg-surface p-4 shadow-xl; }
+  .tp-start img { @apply h-20 w-20 rounded-3xl shadow-md; }
+  .tp-start b { @apply text-lg; }
+  .tp-input { @apply w-full rounded-2xl border-2 border-line bg-surface py-2.5 text-center font-bold; }
+  .tp-enter { @apply w-full rounded-2xl bg-[#0284c7] py-2.5 text-center font-bold text-white; }
+  .tp-mark { @apply p-0; }
+  .tp-mark img { @apply h-full w-full object-cover; object-position: 50% 62%; }
+  .tp-stickers b { @apply text-lg; }
+  .tp-stickers div { @apply grid grid-cols-2 gap-3; }
+  .tp-stickers span { @apply grid h-16 w-16 place-items-center rounded-full border-4 border-white bg-[#fff3cf] text-2xl font-bold text-[#8a5a00] shadow-[0_0_0_2px_#f0b63b]; }
+  .tp-stickers span.new { @apply rotate-6 bg-[#f0b63b] text-white; }
+  .tp-stickers span.slot { @apply border-2 border-dashed border-[#e6d3a0] bg-transparent shadow-none; }
+  .tp-stickers small { @apply text-center text-xs text-muted; }
+
+  .tp-need li { @apply flex items-center gap-4 text-lg font-semibold; }
+  .tp-need .icon { @apply h-8 w-8 shrink-0 text-primary; }
+}

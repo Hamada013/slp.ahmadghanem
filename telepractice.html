@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الجلسات أونلاين | أحمد غانم</title>
+  <meta name="description" content="كيف تجري جلسة النطق واللغة أونلاين مع أحمد غانم: التقييم وتاريخ الحالة، الألعاب على الشاشة المشتركة، التقارير والتقدّم، والتدريب في البيت." />
+  <meta name="theme-color" content="#fff9f2" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17120f" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content="الجلسات أونلاين | أحمد غانم" />
+  <meta property="og:description" content="لكل صوتٍ الحقّ أن يُسمَع ويُفهَم. جلسات نطق ولغة أونلاين وفحص مسحي مجاني للأطفال." />
+  <meta property="og:image" content="assets/images/logo.webp" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/images/logo.webp" type="image/webp" />
+  <link rel="apple-touch-icon" href="assets/images/logo.webp" />
+
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+        var l = localStorage.getItem("lang");
+        if (l === "en") { document.documentElement.lang = "en"; document.documentElement.dir = "ltr"; }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dist/styles.css" />
+</head>
+
+<body class="overflow-x-hidden">
+  <!-- ================= SVG icon sprite ================= -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+    <symbol id="i-ear" viewBox="0 0 24 24"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></symbol>
+    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M19.44 7.85c-.05.32.06.65.29.88l1.57 1.57c.47.47.7 1.09.7 1.7s-.23 1.23-.7 1.7l-1.61 1.61a.98.98 0 0 1-.84.28c-.47-.07-.8-.48-.97-.93a2.5 2.5 0 1 0-3.21 3.22c.45.16.86.5.93.96a.98.98 0 0 1-.28.84l-1.61 1.61a2.4 2.4 0 0 1-1.7.7 2.4 2.4 0 0 1-1.71-.7l-1.57-1.57a1.03 1.03 0 0 0-.87-.29c-.5.08-.84.5-1.02.97a2.5 2.5 0 1 1-3.24-3.24c.47-.18.9-.53.97-1.02a1.03 1.03 0 0 0-.29-.87L2.7 13.7A2.4 2.4 0 0 1 2 12c0-.62.24-1.23.7-1.7L4.23 8.77c.24-.24.58-.35.92-.3.51.07.88.53 1.07 1.01a2.5 2.5 0 1 0 3.26-3.26c-.48-.2-.93-.56-1.01-1.07-.05-.34.06-.68.3-.92L10.3 2.7A2.4 2.4 0 0 1 12 2c.62 0 1.23.24 1.7.7l1.57 1.57c.23.23.56.34.88.29.49-.07.84-.5 1.02-.97a2.5 2.5 0 1 1 3.24 3.24c-.47.18-.9.53-.97 1.02Z"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="14" rx="1.5"/><rect width="7" height="7" x="3" y="14" rx="1.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41M17.66 6.34l1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.1 24.1 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.1 24.1 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2Z"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+  </svg>
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-ink" data-i18n="skip">انتقل إلى المحتوى</a>
+
+  <!-- ================= Header / Navbar ================= -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-transparent backdrop-blur-md transition-all duration-300">
+    <nav class="container-x flex h-18 items-center justify-between gap-4 py-3" aria-label="Main">
+      <a href="index.html#home" class="flex items-center gap-3">
+        <img src="assets/images/logo.webp" alt="" width="44" height="44" class="h-11 w-11 rounded-2xl shadow-sm" />
+        <span class="leading-tight">
+          <span class="block font-bold" data-i18n="brand.name">أحمد غانم</span>
+          <span class="block text-xs text-muted" data-i18n="brand.title">اختصاصي كلام ولغة</span>
+        </span>
+      </a>
+
+      <ul class="hidden items-center gap-1 lg:flex">
+        <li><a href="index.html#about" class="nav-link" data-i18n="nav.about">من أنا</a></li>
+        <li><a href="index.html#services" class="nav-link" data-i18n="nav.services">الخدمات</a></li>
+        <li><a href="index.html#screening" class="nav-link" data-i18n="nav.screening">الفحص المسحي</a></li>
+        <li><a href="telepractice.html" class="nav-link" data-i18n="nav.tele">جلسات أونلاين</a></li>
+        <li><a href="index.html#faq" class="nav-link" data-i18n="nav.faq">أسئلة شائعة</a></li>
+        <li><a href="index.html#contact" class="nav-link" data-i18n="nav.contact">تواصل</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <button type="button" id="lang-toggle" class="icon-btn w-auto px-3 text-sm font-bold" aria-label="Switch to English" data-i18n-attr="aria-label:a11y.lang">EN</button>
+        <button type="button" id="theme-toggle" class="icon-btn" aria-label="تبديل الوضع الليلي" data-i18n-attr="aria-label:a11y.theme">
+          <svg class="icon dark:hidden"><use href="#i-moon"/></svg>
+          <svg class="icon hidden dark:block"><use href="#i-sun"/></svg>
+        </button>
+        <a href="#" data-wa class="btn-primary hidden px-5 py-2.5 text-sm sm:inline-flex" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-chat"/></svg>
+          <span data-i18n="nav.book">احجز استشارة</span>
+        </a>
+        <button type="button" id="menu-toggle" class="icon-btn lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="القائمة" data-i18n-attr="aria-label:a11y.menu">
+          <svg class="icon" data-open-icon><use href="#i-menu"/></svg>
+          <svg class="icon hidden" data-close-icon><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-line bg-bg/95 backdrop-blur-md lg:hidden">
+      <ul class="container-x flex flex-col gap-1 py-4">
+        <li><a href="index.html#about" class="block rounded-2xl px-4 py-3 font-medium hover:bg-surface-2" data-i18n="nav.about">من أنا</a></li>
+        <li><a href="index.html#services" class="block rounded-2xl px-4 py-3 font-medium hover:bg-surface-2" data-i18n="nav.services">الخدمات</a></li>
+        <li><a href="index.html#screening" class="block rounded-2xl px-4 py-3 font-medium hover:bg-surface-2" data-i18n="nav.screening">الفحص المسحي</a></li>
+        <li><a href="telepractice.html" class="block rounded-2xl px-4 py-3 font-medium hover:bg-surface-2" data-i18n="nav.tele">جلسات أونلاين</a></li>
+        <li><a href="index.html#faq" class="block rounded-2xl px-4 py-3 font-medium hover:bg-surface-2" data-i18n="nav.faq">أسئلة شائعة</a></li>
+        <li><a href="index.html#contact" class="block rounded-2xl px-4 py-3 font-medium hover:bg-surface-2" data-i18n="nav.contact">تواصل</a></li>
+        <li class="pt-2">
+          <a href="#" data-wa class="btn-primary w-full" target="_blank" rel="noopener">
+            <svg class="icon"><use href="#i-chat"/></svg>
+            <span data-i18n="nav.book">احجز استشارة</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= Hero: an online session, drawn ================= -->
+    <section class="section pt-32 sm:pt-36">
+      <div class="container-x grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <span class="eyebrow reveal"><svg class="icon"><use href="#i-monitor"/></svg><span data-i18n="tp.eyebrow">الجلسات أونلاين</span></span>
+          <h1 class="mt-5 text-4xl font-bold leading-tight sm:text-5xl reveal" data-i18n="tp.title">ماذا يحدث في الجلسة أونلاين؟</h1>
+          <p class="lead reveal" data-i18n="tp.lead">جلسة مباشرة بالصوت والصورة، على شاشة نتشاركها: ألعاب نطق ولغة صمّمتها بنفسي، وتقييم وتقارير تُحفظ لطفلك، وتدريب بسيط في البيت بين الجلسات.</p>
+          <div class="mt-8 flex flex-wrap gap-3 reveal">
+            <a href="#" data-wa target="_blank" rel="noopener" class="btn-primary"><svg class="icon"><use href="#i-chat"/></svg><span data-i18n="tp.book">احجز جلسة تعريفية</span></a>
+            <a href="#steps" class="btn-ghost"><span data-i18n="tp.how">كيف تسير الجلسة</span></a>
+          </div>
+        </div>
+
+        <!-- A laptop with a video call: the shared screen shows a game, small tiles show the therapist and the child. -->
+        <figure class="tp-laptop reveal-scale" aria-label="مثال لجلسة أونلاين: لعبة على الشاشة المشتركة مع المعالج والطفل" data-i18n-attr="aria-label:tp.heroAlt">
+          <div class="tp-screen">
+            <div class="tp-live"><i></i><span data-i18n="tp.live">جلسة مباشرة</span><span class="tp-time" dir="ltr">24:10</span></div>
+            <img class="tp-share" src="assets/images/telepractice/game-phrases.jpg" alt="" width="1536" height="1152" loading="eager" />
+            <div class="tp-tiles">
+              <div class="tp-tile"><img src="assets/images/logo.webp" alt="" /><span data-i18n="tp.you">أ. أحمد</span></div>
+              <div class="tp-tile tp-kid">
+                <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="36" r="20" fill="#f6c9a5"/><path d="M12 33c0-14 9-22 20-22s20 8 20 22c-6-1-12-5-14-10-3 6-14 10-26 10Z" fill="#5b3a22"/><circle cx="25" cy="37" r="2.6" fill="#2b1a10"/><circle cx="39" cy="37" r="2.6" fill="#2b1a10"/><path d="M25 45q7 6 14 0" fill="none" stroke="#2b1a10" stroke-width="2.6" stroke-linecap="round"/><circle cx="20" cy="43" r="3" fill="#f29c8f" opacity=".6"/><circle cx="44" cy="43" r="3" fill="#f29c8f" opacity=".6"/></svg>
+                <span>آدم</span>
+              </div>
+            </div>
+            <div class="tp-bar" aria-hidden="true"><span><svg class="icon"><use href="#i-mic"/></svg></span><span><svg class="icon"><use href="#i-eye"/></svg></span><span class="on"><svg class="icon"><use href="#i-monitor"/></svg></span><span class="end"><svg class="icon"><use href="#i-phone"/></svg></span></div>
+          </div>
+          <div class="tp-base"></div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= Four steps ================= -->
+    <section id="steps" class="section bg-surface-2/60">
+      <div class="container-x">
+        <div class="mx-auto max-w-2xl text-center">
+          <span class="eyebrow reveal" data-i18n="tp.stepsEyebrow">خطوة بخطوة</span>
+          <h2 class="h-section reveal" data-i18n="tp.stepsTitle">من أول لقاء إلى التدريب في البيت</h2>
+        </div>
+        <ol class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="card reveal tp-step"><b>١</b><svg class="icon"><use href="#i-clipboard"/></svg><h3 data-i18n="tp.s1">قبل الجلسة</h3><p data-i18n="tp.s1t">تاريخ الحالة وتقييم أونلاين، لنعرف من أين نبدأ.</p></li>
+          <li class="card reveal tp-step"><b>٢</b><svg class="icon"><use href="#i-monitor"/></svg><h3 data-i18n="tp.s2">في الجلسة</h3><p data-i18n="tp.s2t">نلعب معاً على شاشة مشتركة، وأنا أسمع وأصحّح مباشرة.</p></li>
+          <li class="card reveal tp-step"><b>٣</b><svg class="icon"><use href="#i-award"/></svg><h3 data-i18n="tp.s3">بعد الجلسة</h3><p data-i18n="tp.s3t">تقرير واضح بالأهداف والنسب، يتحدّث بعد كل جلسة.</p></li>
+          <li class="card reveal tp-step"><b>٤</b><svg class="icon"><use href="#i-heart"/></svg><h3 data-i18n="tp.s4">في البيت</h3><p data-i18n="tp.s4t">تدريب قصير للأهل بين الجلسات، باسم الطفل ورقمه.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= Assessment and case history ================= -->
+    <section class="section">
+      <div class="container-x grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <span class="eyebrow reveal"><svg class="icon"><use href="#i-clipboard"/></svg><span data-i18n="tp.s1">قبل الجلسة</span></span>
+          <h2 class="h-section reveal" data-i18n="tp.aTitle">تاريخ الحالة والتقييم</h2>
+          <p class="lead reveal" data-i18n="tp.aText">نملأ معاً استمارة تاريخ الحالة، ثم نجري اختبار النطق أو اللغة المناسب لعمر الطفل. النتائج تبني خطة التدخل مباشرة.</p>
+          <ul class="mt-6 space-y-3 reveal tp-list">
+            <li><svg class="icon"><use href="#i-check-circle"/></svg><span data-i18n="tp.a1">مقابلة مع الأهل عن النمو والسمع والكلام</span></li>
+            <li><svg class="icon"><use href="#i-check-circle"/></svg><span data-i18n="tp.a2">اختبار نطق بالصور: كل صوت في أول الكلمة ووسطها وآخرها</span></li>
+            <li><svg class="icon"><use href="#i-check-circle"/></svg><span data-i18n="tp.a3">ملخّص بالأصوات التي تحتاج تدريباً</span></li>
+          </ul>
+        </div>
+        <div class="card reveal-scale tp-mock" aria-label="مثال: ملف آدم ونتيجة اختبار النطق" data-i18n-attr="aria-label:tp.aAlt">
+          <div class="tp-mock-head"><span class="tp-dot"></span><b data-i18n="tp.file">ملف الطفل</b><small dir="ltr">241-841</small></div>
+          <dl class="tp-fields">
+            <div><dt data-i18n="tp.name">الاسم</dt><dd>آدم</dd></div>
+            <div><dt data-i18n="tp.age">العمر</dt><dd data-i18n="tp.ageV">٥ سنوات</dd></div>
+            <div><dt data-i18n="tp.lang">اللغة</dt><dd data-i18n="tp.langV">العربية</dd></div>
+            <div><dt data-i18n="tp.concern">سبب المراجعة</dt><dd data-i18n="tp.concernV">صعوبة في «س» و«ر»</dd></div>
+          </dl>
+          <p class="tp-mini-title" data-i18n="tp.testTitle">اختبار النطق: أول الكلمة · وسطها · آخرها</p>
+          <div class="tp-letters" dir="rtl">
+            <span data-s="ok"><b>ب</b><i></i><i></i><i></i></span><span data-s="ok"><b>م</b><i></i><i></i><i></i></span><span data-s="ok"><b>ت</b><i></i><i></i><i></i></span><span data-s="ok"><b>ك</b><i></i><i></i><i></i></span>
+            <span data-s="mix"><b>س</b><i class="x"></i><i class="x"></i><i></i></span><span data-s="bad"><b>ر</b><i class="x"></i><i class="x"></i><i class="x"></i></span><span data-s="ok"><b>ل</b><i></i><i></i><i></i></span><span data-s="ok"><b>ش</b><i></i><i></i><i></i></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Games in the session ================= -->
+    <section class="section bg-surface-2/60">
+      <div class="container-x">
+        <div class="mx-auto max-w-2xl text-center">
+          <span class="eyebrow reveal"><svg class="icon"><use href="#i-puzzle"/></svg><span data-i18n="tp.s2">في الجلسة</span></span>
+          <h2 class="h-section reveal" data-i18n="tp.gTitle">ألعاب على الشاشة المشتركة</h2>
+          <p class="lead reveal" data-i18n="tp.gText">تطبيقات صمّمتها للجلسات: الطفل يلعب ويقول، وأنا أسمع وأقيّم كل كلمة في الوقت نفسه.</p>
+        </div>
+        <div class="mt-14 grid gap-6 md:grid-cols-3">
+          <figure class="reveal tp-device"><img src="assets/images/telepractice/game-train.jpg" alt="قطار المقاطع" data-i18n-attr="alt:tp.g1" loading="lazy" width="1536" height="1152" /><figcaption><b data-i18n="tp.g1">قطار المقاطع</b><span data-i18n="tp.g1t">صوت مع حركة، مقطعاً مقطعاً</span></figcaption></figure>
+          <figure class="reveal tp-device"><img src="assets/images/telepractice/game-words.jpg" alt="بيت الكلمات" data-i18n-attr="alt:tp.g2" loading="lazy" width="1536" height="1152" /><figcaption><b data-i18n="tp.g2">بيت الكلمات</b><span data-i18n="tp.g2t">يبحث عن الصور ويقول أسماءها</span></figcaption></figure>
+          <figure class="reveal tp-device"><img src="assets/images/telepractice/game-phrases.jpg" alt="برج العبارات" data-i18n-attr="alt:tp.g3" loading="lazy" width="1536" height="1152" /><figcaption><b data-i18n="tp.g3">برج العبارات</b><span data-i18n="tp.g3t">يسمع العبارة ويقولها بعدها</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Reports and progress ================= -->
+    <section class="section">
+      <div class="container-x grid items-center gap-12 lg:grid-cols-2">
+        <div class="lg:order-2">
+          <span class="eyebrow reveal"><svg class="icon"><use href="#i-award"/></svg><span data-i18n="tp.s3">بعد الجلسة</span></span>
+          <h2 class="h-section reveal" data-i18n="tp.rTitle">تقارير وتقدّم تراه بعينك</h2>
+          <p class="lead reveal" data-i18n="tp.rText">لكل طفل خطة بأهداف قصيرة وواضحة. التطبيق يحسب النسب من الجلسات، وأقيّم بنفسي على ٢٠ و٤٠ و٦٠ و٨٠٪. يتحقق الهدف عند ٨٠٪.</p>
+          <ul class="mt-6 space-y-3 reveal tp-list">
+            <li><svg class="icon"><use href="#i-check-circle"/></svg><span data-i18n="tp.r1">تقرير PDF تحفظه وتشاركه</span></li>
+            <li><svg class="icon"><use href="#i-check-circle"/></svg><span data-i18n="tp.r2">كل صوت ومستواه: مقاطع، كلمات، عبارات، جمل، قصص</span></li>
+          </ul>
+        </div>
+        <div class="card reveal-scale tp-mock" aria-label="مثال: تقرير تقدّم آدم" data-i18n-attr="aria-label:tp.rAlt">
+          <div class="tp-mock-head"><span class="tp-dot"></span><b data-i18n="tp.report">تقرير آدم</b><small data-i18n="tp.weeks">آخر ٤ أسابيع</small></div>
+          <div class="tp-bars">
+            <div style="--p:67%"><span data-i18n="tp.l1">المقاطع</span><i><u></u></i><b dir="ltr">67%</b></div>
+            <div style="--p:85%"><span data-i18n="tp.l2">الكلمات</span><i><u></u></i><b dir="ltr">85%</b></div>
+            <div style="--p:40%"><span data-i18n="tp.l3">العبارات</span><i><u></u></i><b dir="ltr">40%</b></div>
+            <div style="--p:15%"><span data-i18n="tp.l4">الجمل</span><i><u></u></i><b dir="ltr">15%</b></div>
+          </div>
+          <p class="tp-mini-title" data-i18n="tp.goals">أهداف خطة التدخل</p>
+          <div class="tp-goals">
+            <p data-state="done"><span data-i18n="tp.goal1">يقول «س» صحيحاً في الكلمات</span><b data-i18n="tp.done">تحقق ٨٠٪</b></p>
+            <p><span data-i18n="tp.goal2">يقول «ر» صحيحاً في المقاطع</span><b dir="ltr">60%</b></p>
+            <p><span data-i18n="tp.goal3">يقول «س» صحيحاً في العبارات</span><b dir="ltr">40%</b></p>
+          </div>
+          <div class="tp-scale" aria-hidden="true"><span>20</span><span>40</span><span class="on">60</span><span>80</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Home practice ================= -->
+    <section class="section bg-surface-2/60">
+      <div class="container-x">
+        <div class="mx-auto max-w-2xl text-center">
+          <span class="eyebrow reveal"><svg class="icon"><use href="#i-heart"/></svg><span data-i18n="tp.s4">في البيت</span></span>
+          <h2 class="h-section reveal" data-i18n="tp.hTitle">تدريب قصير مع الأهل بين الجلسات</h2>
+          <p class="lead reveal" data-i18n="tp.hText">ترسل لك الاسم والرقم، فيفتح التطبيق لطفلك فقط. خمس دقائق في اليوم، وتعلّم عند كل كلمة: «صح» أو «مرة ثانية».</p>
+        </div>
+        <div class="mt-14 grid items-start gap-8 sm:grid-cols-3">
+          <!-- Phone 1: the start screen -->
+          <figure class="reveal tp-phone">
+            <div class="tp-phone-screen tp-start">
+              <img src="assets/images/logo.webp" alt="" />
+              <b data-i18n="tp.appName">تدريب النطق</b>
+              <span class="tp-input">آدم</span>
+              <span class="tp-input" dir="ltr">241-841</span>
+              <span class="tp-enter" data-i18n="tp.enter">دخول</span>
+            </div>
+            <figcaption data-i18n="tp.p1">١. الاسم والرقم من المعالج</figcaption>
+          </figure>
+          <!-- Phone 2: the parents' marks -->
+          <figure class="reveal tp-phone">
+            <div class="tp-phone-screen tp-mark">
+              <img src="assets/images/telepractice/home-marking.jpg" alt="" loading="lazy" />
+            </div>
+            <figcaption data-i18n="tp.p2">٢. «صح» أو «مرة ثانية» بعد كل كلمة</figcaption>
+          </figure>
+          <!-- Phone 3: stickers -->
+          <figure class="reveal tp-phone">
+            <div class="tp-phone-screen tp-stickers">
+              <b data-i18n="tp.album">ألبوم الملصقات</b>
+              <div><span>س</span><span>ر</span><span>ب</span><span>س</span><span class="new">ر</span><span class="slot"></span></div>
+              <small data-i18n="tp.newSticker">ملصق جديد بعد كل تدريب</small>
+            </div>
+            <figcaption data-i18n="tp.p3">٣. ملصق في الألبوم بعد كل تدريب</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= What you need ================= -->
+    <section class="section">
+      <div class="container-x">
+        <div class="mx-auto max-w-2xl text-center">
+          <span class="eyebrow reveal"><svg class="icon"><use href="#i-tool"/></svg><span data-i18n="tp.needEyebrow">قبل أول جلسة</span></span>
+          <h2 class="h-section reveal" data-i18n="tp.needTitle">ما تحتاجه في البيت</h2>
+        </div>
+        <ul class="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3 tp-need">
+          <li class="card reveal"><svg class="icon"><use href="#i-monitor"/></svg><span data-i18n="tp.n1">حاسوب أو جهاز لوحي بشاشة كبيرة</span></li>
+          <li class="card reveal"><svg class="icon"><use href="#i-music"/></svg><span data-i18n="tp.n2">سمّاعات بميكروفون</span></li>
+          <li class="card reveal"><svg class="icon"><use href="#i-wave"/></svg><span data-i18n="tp.n3">إنترنت ثابت</span></li>
+          <li class="card reveal"><svg class="icon"><use href="#i-smile"/></svg><span data-i18n="tp.n4">زاوية هادئة ومضاءة</span></li>
+          <li class="card reveal"><svg class="icon"><use href="#i-users"/></svg><span data-i18n="tp.n5">أحد الوالدين قريب من الطفل</span></li>
+          <li class="card reveal"><svg class="icon"><use href="#i-calendar"/></svg><span data-i18n="tp.n6">موعد ثابت كل أسبوع</span></li>
+        </ul>
+        <div class="mt-12 text-center reveal">
+          <a href="#" data-wa target="_blank" rel="noopener" class="btn-primary"><svg class="icon"><use href="#i-chat"/></svg><span data-i18n="tp.book">احجز جلسة تعريفية</span></a>
+          <p class="mt-4 text-sm text-muted" data-i18n="tp.demoNote">الصور والأسماء في هذه الصفحة أمثلة توضيحية، وليست لطفل حقيقي.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ================= Footer ================= -->
+  <footer class="relative mt-10 bg-[#2a1d16] text-[#f6eee7]">
+    <svg class="absolute inset-x-0 -top-10 h-10 w-full text-[#2a1d16]" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="currentColor" d="M0 40c120 26 240 26 360 0s240-26 360 0 240 26 360 0 240-26 360 0v40H0Z"/>
+    </svg>
+    <div class="container-x grid gap-10 py-14 md:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logo.webp" alt="" width="48" height="48" class="h-12 w-12 rounded-2xl" />
+          <div>
+            <p class="text-lg font-bold" data-i18n="brand.name">أحمد غانم</p>
+            <p class="text-sm text-[#c9b5a7]" data-i18n="brand.title">اختصاصي كلام ولغة</p>
+          </div>
+        </div>
+        <p class="mt-5 max-w-xs leading-relaxed text-[#c9b5a7]" data-i18n="footer.about">لكل صوتٍ الحقّ أن يُسمَع ويُفهَم. جلسات علاج نطق ولغة أونلاين للأطفال وأهاليهم.</p>
+      </div>
+      <div>
+        <p class="font-bold" data-i18n="footer.links">روابط سريعة</p>
+        <ul class="mt-4 grid grid-cols-2 gap-2 text-[#c9b5a7]">
+          <li><a href="index.html#about" class="hover:text-white" data-i18n="nav.about">من أنا</a></li>
+          <li><a href="index.html#services" class="hover:text-white" data-i18n="nav.services">الخدمات</a></li>
+          <li><a href="index.html#screening" class="hover:text-white" data-i18n="nav.screening">الفحص المسحي</a></li>
+          <li><a href="telepractice.html" class="hover:text-white" data-i18n="nav.tele">جلسات أونلاين</a></li>
+          <li><a href="index.html#faq" class="hover:text-white" data-i18n="nav.faq">أسئلة شائعة</a></li>
+          <li><a href="index.html#contact" class="hover:text-white" data-i18n="nav.contact">تواصل</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-bold" data-i18n="footer.contact">معلومات التواصل</p>
+        <ul class="mt-4 space-y-3 text-[#c9b5a7]">
+          <li><a href="#" data-wa target="_blank" rel="noopener" class="flex items-center gap-3 hover:text-white"><svg class="icon"><use href="#i-chat"/></svg><span dir="ltr" data-site="phoneDisplay"></span></a></li>
+          <li><a href="#" data-mail class="flex items-center gap-3 hover:text-white"><svg class="icon"><use href="#i-mail"/></svg><span dir="ltr" data-site="email" class="break-all"></span></a></li>
+        </ul>
+        <div id="social-links" class="mt-5 flex flex-wrap gap-2"></div>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-x flex flex-col items-center justify-between gap-2 py-5 text-sm text-[#c9b5a7] sm:flex-row">
+        <p>&copy; <span id="year"></span> <span data-i18n="brand.name">أحمد غانم</span>. <span data-i18n="footer.rights">جميع الحقوق محفوظة.</span></p>
+        <p data-i18n="footer.note">المعلومات في هذا الموقع توعوية ولا تغني عن التقييم المتخصص.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/screening-data.js"></script>
+  <script src="js/screening.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
